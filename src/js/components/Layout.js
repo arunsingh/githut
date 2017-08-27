@@ -1,5 +1,6 @@
 import React from "react"
 import LangChart from "./LangChart"
+import LangChartNew from "./LangChartNew"
 import LangTable from "./LangTable"
 import LicensePie from "./LicensePie"
 import Button from "./Button"
@@ -19,6 +20,7 @@ export default class Layout extends React.Component {
         <Head/>
         <Header/>
         <LangChart store={EventStore}/>
+        <LangChartNew store={EventStore}/>
         <Button store={EventStore}/>
         <div className='rowCenter'>
           <SelectYear hist={HistStore}/>
