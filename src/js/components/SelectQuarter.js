@@ -1,7 +1,8 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
+import Select from 'react-select'
+import 'react-select/dist/react-select.css'
+import moment from 'moment'
 
 /**
  * Simple bootstrap select button to select the quarter
@@ -14,6 +15,7 @@ export default class SelectQuarter extends React.Component {
 
     constructor(props) {
         super(props);
+        const lastQuarter = String(moment().subtract(1, 'Q').quarter())
         this.state = {
             options: [
                   { value: '1', label: '1' },
@@ -21,7 +23,7 @@ export default class SelectQuarter extends React.Component {
                   { value: '3', label: '3' },
                   { value: '4', label: '4' }
             ],
-            value: '2'
+            value: lastQuarter
         }
         this.onChange = this.onChange.bind(this)
     }
